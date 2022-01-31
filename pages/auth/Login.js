@@ -6,7 +6,7 @@ import Image from 'next/image';
 
 function Login() {
  
-  const [providers, setProviders] = useState(null);
+  const [providers, setProviders] = useState([]);
 
 
   useEffect(() => {
@@ -27,8 +27,7 @@ function Login() {
         />
   
        
-
-  {providers &&
+      {providers &&
         Object.values(providers).map((provider) => (
           <div key={provider.name}>
             <button

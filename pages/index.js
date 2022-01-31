@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Sidebar from '../components/Sidebar'
 import Feed from '../components/Feed'
 import { getProviders, getSession, useSession } from "next-auth/react";
-import Login from '../components/Login'
+import Login from './auth/Login'
 import Modal from '../components/Modal'
 import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'

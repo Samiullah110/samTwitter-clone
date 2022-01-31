@@ -28,18 +28,18 @@ function Login() {
   
        
 
-          {providers&&
-          Object.values(providers).map((provider)=>(
-                   <div key={provider.name}>
-                     <button
-                className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#1d9bf0] rounded hover:bg-[#1d9bf0] group"
-                onClick={() => signIn(provider.id)}
-              >
-                  Sign in with {provider.name}
-              
-              </button>
-            </div>
-          ))}
+  {providers &&
+        Object.values(providers).map((provider) => (
+          <div key={provider.name}>
+            <button
+              onClick={() => {
+                signIn(provider.id);
+              }}
+            >
+              Sign in with {provider.name}
+            </button>
+          </div>
+        ))}
          
               
 

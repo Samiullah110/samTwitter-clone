@@ -4,9 +4,8 @@ import Image from 'next/image';
 
 
 
-function Login() {
+function Login({providers}) {
 
-const providers=getProviders()
     return (
       <div className="flex flex-col items-center space-y-20 pt-48">
         <Image
@@ -21,7 +20,7 @@ const providers=getProviders()
          
               <button
                 className="relative inline-flex items-center justify-start px-6 py-3 overflow-hidden font-medium transition-all bg-[#1d9bf0] rounded hover:bg-[#1d9bf0] group"
-                onClick={() => signIn(providers.id)}
+                onClick={() => signIn(providers)}
               >
                   Sign in with Google
               
@@ -31,6 +30,17 @@ const providers=getProviders()
         
       </div>
     );
+  }
+
+  export async function getServerSideProps(){
+
+    const providers=await getProviders();
+
+    return{
+      props:{
+        providers,
+      },
+    };
   }
   
   export default Login;

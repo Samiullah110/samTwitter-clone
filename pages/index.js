@@ -1,12 +1,8 @@
 import Head from 'next/head'
-import Image from 'next/image'
 import Sidebar from '../components/Sidebar'
-import styles from '../styles/Home.module.css'
-import sidebarLink from '../components/SidebarLink'
 import Feed from '../components/Feed'
 import { getProviders, getSession, useSession } from "next-auth/react";
 import Login from '../components/Login'
-import { useEffect } from 'react'
 import Modal from '../components/Modal'
 import { useRecoilState } from 'recoil'
 import { modalState } from '../atoms/modalAtom'
